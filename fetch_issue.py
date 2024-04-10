@@ -33,7 +33,7 @@ with open(file_path, 'w') as f:
   writer = csv.writer(f)
   writer.writerow(['repository', '#', 'title', 'closed_at', 'label', 'assignee'])
   for repository in repositories:
-    for number in range(20):
+    for number in range(50):
       params['page'] = number + 1
       url = url_base + repository + '/issues'
       response = requests.get(url, params=params, headers=headers)
