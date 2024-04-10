@@ -20,7 +20,7 @@ if not os.path.exists(output_folder):
 
 def generate_filename_with_date():
   today = datetime.today()
-  filename = today.strftime("issue-%Y%m%d%H%M%S.txt")
+  filename = today.strftime("issue-%Y%m%d%H%M%S.csv")
   return filename
 
 headers = {'Authorization': 'token ' + access_token}
