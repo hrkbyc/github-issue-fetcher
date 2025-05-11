@@ -42,7 +42,7 @@ with open(file_path, 'w') as f:
         for issue in issues:
           if issue['labels'] and issue['labels'][0]['name'] != 'Break':
             # loginのみでストを作る
-            assignee_names = [assignee.get('login') for assignee in issue['assignees']]
+            assignee_names = [assignee.get('login') for assignee in issue['assignees']] or ['devin']
             label_name = issue['labels'][0]['name']
             closed_at_utc = datetime.strptime(issue['closed_at'], '%Y-%m-%dT%H:%M:%SZ')
             closed_at_jst = timezone('Asia/Tokyo').localize(closed_at_utc)
