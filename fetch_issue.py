@@ -40,7 +40,7 @@ with open(file_path, 'w') as f:
       issues = json.loads(response.content)
       if len(issues) > 0:
         for issue in issues:
-          if issue['assignees'] and issue['labels'] and issue['labels'][0]['name'] != 'Break':
+          if issue['labels'] and issue['labels'][0]['name'] != 'Break':
             # loginのみでストを作る
             assignee_names = [assignee.get('login') for assignee in issue['assignees']]
             label_name = issue['labels'][0]['name']
